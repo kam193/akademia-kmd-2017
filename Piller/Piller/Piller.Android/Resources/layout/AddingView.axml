@@ -3,9 +3,7 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -15,23 +13,29 @@
             layout="@layout/toolbar"
             local:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
-    <MvvmCross.Binding.Droid.Views.MvxListView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mvxListView1"
-        local:MvxBind="ItemsSource ListOfMedicins"
-        local:MvxItemTemplate="@layout/medicineitem"/>
+        android:id="@+id/editText1"
+        android:hint="Nazwa leku"
+        local:MvxBind="Text MedicineName" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:hint="Dawka leku"
+        local:MvxBind="Text MedicineDose" />
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/relativeLayout1"
         android:gravity="bottom">
         <Button
-            android:text="Dodaj"
+            android:text="Gotowe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button1"
-            android:layout_gravity="bottom"
-            local:MvxBind="Click GoToAdd" />
+            android:id="@+id/button2"
+            local:MvxBind="Click AddMedicine"
+             />
     </RelativeLayout>
 </LinearLayout>
